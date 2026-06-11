@@ -31,8 +31,20 @@ ref explicitly:
     git clone /path/to/2026-06-10.bundle MyRepo
     cd MyRepo
     git fetch /path/to/2026-06-10.bundle '+refs/backups/*:refs/backups/*'
-    git checkout refs/backups/uncommitted        # inspect it, or:
+
+Then, to put the uncommitted work back into the working tree exactly as it
+was — modified files modified, untracked files untracked (this recreates the
+repo as it stood at backup time):
+
+    git restore --source=refs/backups/uncommitted --worktree -- .
+
+Alternatives:
+
+    git checkout refs/backups/uncommitted        # just inspect the snapshot
     git cherry-pick -n refs/backups/uncommitted  # apply onto current branch
+
+Note: gitignored files are never in backups; everything else round-trips
+byte-for-byte (verified by a live restore drill).
 
 ## Just need one old file
 
