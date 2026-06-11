@@ -1,0 +1,20 @@
+# git-backup configuration
+#
+# Copy to ~/.config/git-backup/config (or point GIT_BACKUP_CONFIG at a file).
+# This file is sourced by git-backup.sh as shell script; values set here
+# override the built-in defaults shown below.
+
+# Folder scanned (recursively) for git repos to back up
+#GIT_BACKUP_ROOT="$HOME/Projects"
+
+# Where dated .bundle backups are written (default: iCloud Drive)
+#GIT_BACKUP_DEST="$HOME/Library/Mobile Documents/com~apple~CloudDocs/RepoBackups"
+
+# Delete bundles older than this many days (the newest per repo is always kept)
+#GIT_BACKUP_RETENTION_DAYS=30
+
+# Log file
+#GIT_BACKUP_LOG="$HOME/Library/Logs/git-backup.log"
+
+# Set to 1 to disable macOS failure notifications
+#GIT_BACKUP_NO_NOTIFY=0
